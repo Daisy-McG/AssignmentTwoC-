@@ -9,7 +9,54 @@ a.navbar-brand {
 
 body {
     background-color: #000000;
+    background-image: url(../Images/backdrop.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    color: darkgray;
 }
+
+h1, h5 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #ff0000;
+}
+
+.main-content {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.terra {
+    color: #d33525;
+}
+
+.rolesAvail {
+    padding: 50px;
+    position: center fixed;
+}
+
+/*Animation images*/
+
+#cf {
+    position: relative;
+    height: 281px;
+    width: 450px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+    #cf img {
+        position: absolute;
+        left: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+        border: 1px solid white;
+    }
+
+        #cf img.top:hover {
+            opacity: 0;
+        }
 
 /* Sticky footer styles
 -------------------------------------------------- */
