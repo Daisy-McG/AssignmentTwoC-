@@ -6,16 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectTerraformMars.Models;
+using ProjectTerraformMars.ModelViews;
 
 namespace ProjectTerraformMars.Controllers
 {
     public class JobsController : Controller
     {
         private readonly IJobRepository _jobRepository;
+        private readonly IApplicantRepository _applicantRepository;
+        private readonly IRoleRepository _roleRepository;
 
-        public JobsController(IJobRepository jobRepository)
+        public JobsController(IJobRepository jobRepository, IApplicantRepository applicantRepository, IRoleRepository roleRepository)
         {
             _jobRepository = jobRepository;
+            _applicantRepository = applicantRepository;
+            _roleRepository = roleRepository;
         }
 
         // GET: Jobs
@@ -33,6 +38,11 @@ namespace ProjectTerraformMars.Controllers
             }
 
             var job = _jobRepository.GetJobById(id);
+            ApplicantRole applicantRole = new ApplicantRole
+            {
+                Applicant = _applicantRepository.GetApplicantById(job.ApplicantId),
+                Role = _roleRepository.GetRoleById(job.RoleId)
+            };
             if (job == null)
             {
                 return NotFound();
@@ -44,6 +54,8 @@ namespace ProjectTerraformMars.Controllers
         // GET: Jobs/Create
         public IActionResult Create()
         {
+            ViewData["ApplicantId"] = new SelectList(_applicantRepository.GetApplicants(), "Id", "Name");
+            ViewData["RoleId"] = new SelectList(_roleRepository.GetRoles(), "Id", "RoleName");
             return View();
         }
 
