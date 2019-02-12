@@ -48,7 +48,7 @@ namespace ProjectTerraformMars.Controllers
                 return NotFound();
             }
 
-            return View(job);
+            return View(applicantRole);
         }
 
         // GET: Jobs/Create
