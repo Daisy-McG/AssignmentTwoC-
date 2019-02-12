@@ -6,7 +6,9 @@
 
 <h1>Feedback</h1>
 
-<h4>Help us improve your experience and fill out the feedback form below.</h4>
+<h4>Help us improve your experience and fill out our feedback form</h4><br />
+<h5>Alternatively you can contact us by email
+    or the address provided below.</h5>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -28,14 +30,21 @@
                 <span asp-validation-for="Comments" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Submit Feedback" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="contact-us">
+    <address>
+        Email <a href="mailto:daisy.project.mars@gmail.com">Daisy McGirr</a>.<br>
+        Donegal ETB, <br />
+        Ballyraine Industrial Estate<br>
+        Letterkenny<br />
+        Co Donegal<br />
+        Ireland
+    </address>
 </div>
 
 @section Scripts {

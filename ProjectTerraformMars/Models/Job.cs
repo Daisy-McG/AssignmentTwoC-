@@ -10,8 +10,10 @@ namespace ProjectTerraformMars.Models
     {
         public int Id { get; set; }
         [Required]
+        [Display(Name = "Applicant")]
         public int ApplicantId { get; set; }
         [Required]
+        [Display(Name = "Role")]
         public int RoleId { get; set; }
     }
 }

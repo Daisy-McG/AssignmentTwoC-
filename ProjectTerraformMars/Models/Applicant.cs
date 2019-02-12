@@ -16,6 +16,7 @@ namespace ProjectTerraformMars.Models
         [StringLength(150)]
         public string Address { get; set; }
         [Required]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]

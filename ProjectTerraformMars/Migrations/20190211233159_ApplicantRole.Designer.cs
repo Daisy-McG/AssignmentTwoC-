@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectTerraformMars.Models;
 
 namespace ProjectTerraformMars.Migrations
 {
     [DbContext(typeof(ProjectTerraformMarsContext))]
-    partial class ProjectTerraformMarsContextModelSnapshot : ModelSnapshot
+    [Migration("20190211233159_ApplicantRole")]
+    partial class ApplicantRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
